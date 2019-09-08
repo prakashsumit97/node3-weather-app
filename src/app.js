@@ -12,6 +12,7 @@ console.log(path.join(__dirname,'../public/index.html'));
 const publicDirectory = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialPath = path.join(__dirname,'../templates/partials');
+const port = process.env.PORT||3000;
 
 
 // set up handlebars engine and views location
@@ -93,6 +94,6 @@ app.get('*',(req,res)=>{
     });
 })
 
-app.listen(3000,()=>{
-    console.log('server is up in port 3000');
+app.listen(port,()=>{
+    console.log(`server is up in port ${port}`);
 })
